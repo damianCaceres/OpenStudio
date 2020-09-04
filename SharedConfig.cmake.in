@@ -1,0 +1,11 @@
+@PACKAGE_INIT@
+include( "${CMAKE_CURRENT_LIST_DIR}/utilitiesSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/modelSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/osversionSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/airflowSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/energyplusSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/gbxmlSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/isomodelSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/measureSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/radianceSharedConfig.cmake" )
+include( "${CMAKE_CURRENT_LIST_DIR}/sddSharedConfig.cmake" )

@@ -434,6 +434,44 @@ if(BUILD_TESTING)
   add_dependencies(${target_name}_tests openstudio_energyplus_resources)
 endif()
 
+############################################################################################################
+############################################################################################################
+
+add_library(${target_name}_shared 
+            SHARED 
+            ${${target_name}_src}
+            )
+
+target_link_libraries(${target_name}_shared 
+                      PUBLIC 
+                      ${${target_name}_depends}
+                      )
+
+target_include_directories(${target_name}_shared 
+                          PRIVATE 
+                          ${PROJECT_BINARY_DIR}
+                          )
+
+target_include_directories(${target_name}_shared 
+                           PRIVATE 
+                           ${PROJECT_BINARY_DIR}/src
+                           )
+
+add_dependencies(${target_name}_shared GenerateIddFactoryRun)
+
+install(TARGETS ${target_name}_shared
+        EXPORT ${target_name}_shared_targets
+        )    
+        
+install(TARGETS ${target_name}_shared
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION include/openstudio
+        )
+
+############################################################################################################
+############################################################################################################
+
 CREATE_SRC_GROUPS("${${target_name}_swig_src}")
 
 set(swig_target_name ${target_name})

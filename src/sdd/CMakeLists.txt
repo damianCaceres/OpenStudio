@@ -39,6 +39,34 @@ target_compile_definitions(${target_name} PRIVATE openstudio_sdd_EXPORTS SHARED_
 target_link_libraries(${target_name} PUBLIC ${${target_name}_depends})
 add_dependencies(${target_name} GenerateIddFactoryRun)
 
+############################################################################################################
+############################################################################################################
+
+add_library(${target_name}_shared 
+            SHARED 
+            ${${target_name}_src}
+            )
+
+target_link_libraries(${target_name}_shared 
+                      PUBLIC 
+                      ${${target_name}_depends}
+                      )
+
+add_dependencies(${target_name}_shared GenerateIddFactoryRun)
+
+install(TARGETS ${target_name}_shared
+        EXPORT ${target_name}_shared_targets
+        )            
+        
+install(TARGETS ${target_name}_shared
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION include/openstudio
+        )
+
+############################################################################################################
+############################################################################################################
+
 
 set(${target_name}_test_depends
   openstudiolib

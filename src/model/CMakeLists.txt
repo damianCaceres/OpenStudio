@@ -1700,6 +1700,42 @@ if(BUILD_SHARED_LIBS)
 endif()
 
 
+############################################################################################################
+############################################################################################################
+
+add_library(${target_name}_shared 
+            SHARED
+            ${${target_name}_src}
+             ${EMBEDDED_OUTPUT}
+            )
+
+target_link_libraries(${target_name}_shared 
+                      PUBLIC 
+                      ${${target_name}_depends}
+                      )
+
+target_include_directories(${target_name}_shared 
+                           PRIVATE 
+                           ${PROJECT_BINARY_DIR}
+                           )
+
+add_dependencies(${target_name}_shared GenerateIddFactoryRun)
+
+install(TARGETS ${target_name}_shared
+        EXPORT ${target_name}_shared_targets
+        )     
+        
+install(TARGETS ${target_name}_shared
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION include/openstudio
+        )
+
+############################################################################################################
+############################################################################################################
+
+
+
 set(${target_name}_test_src
   test/AdditionalProperties_GTest.cpp
   test/AirConditionerVariableRefrigerantFlow_GTest.cpp

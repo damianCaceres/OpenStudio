@@ -1265,6 +1265,252 @@ install(
   COMPONENT "CPPAPI"
 )
 
+
+###############################################################################
+###############################################################################
+
+install(EXPORT
+        openstudio_utilities_shared_targets
+        FILE utilitiesSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/utilitiesSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/utilitiesSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_utilities_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/utilitiesSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_model_shared_targets
+        FILE modelSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/modelSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/modelSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_model_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/modelSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_osversion_shared_targets
+        FILE osversionSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/osversionSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/osversionSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_osversion_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/osversionSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_airflow_shared_targets
+        FILE airflowSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/airflowSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/airflowSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_airflow_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/airflowSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_energyplus_shared_targets
+        FILE energyplusSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/energyplusSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/energyplusSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_energyplus_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/energyplusSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_gbxml_shared_targets
+        FILE gbxmlSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/gbxmlSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/gbxmlSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_gbxml_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/gbxmlSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_isomodel_shared_targets
+        FILE isomodelSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/isomodelSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/isomodelSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_isomodel_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/isomodelSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_measure_shared_targets
+        FILE measureSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/measureSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/measureSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_measure_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/measureSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_radiance_shared_targets
+        FILE radianceSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/radianceSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/radianceSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_radiance_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/radianceSharedConfig.cmake"
+) 
+
+###############################################################################
+
+install(EXPORT
+        openstudio_sdd_shared_targets
+        FILE sddSharedConfig.cmake
+        DESTINATION lib/cmake/openstudio
+       )
+
+configure_package_config_file(${PROJECT_SOURCE_DIR}/SharedConfig.cmake.in
+  "${PROJECT_BINARY_DIR}/sddSharedConfig.cmake"
+  INSTALL_DESTINATION "lib/cmake/openstudio"
+  NO_SET_AND_CHECK_MACRO
+  NO_CHECK_REQUIRED_COMPONENTS_MACRO
+  )
+
+install(FILES
+  ${PROJECT_BINARY_DIR}/sddSharedConfig.cmake
+  DESTINATION lib/cmake/openstudio
+  )
+  
+export(EXPORT openstudio_sdd_shared_targets
+  FILE "${PROJECT_BINARY_DIR}/sddSharedConfig.cmake"
+) 
+
+################################################################################
+################################################################################
+
+
 if (NOT DELAY_INCLUDE_CPACK)
   include(CPack)
 endif()
